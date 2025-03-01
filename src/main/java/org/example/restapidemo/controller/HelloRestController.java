@@ -25,6 +25,11 @@ import org.springframework.web.bind.annotation.PathVariable;
         public String helloPost(@RequestBody User user) {
             return "Hello, " + user.getFirstName() + " " + user.getLastName() + "!";
         }
+        @RequestMapping( "/hello/put/{firstName}")
+        public String helloPut(
+                @PathVariable String firstName, @RequestParam(name = "lastName") String lastName) {
+            return "Hello, " + firstName + " " + lastName + "!";
+        }
 }
 
 
